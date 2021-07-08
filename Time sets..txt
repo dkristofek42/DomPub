@@ -1,0 +1,23 @@
+((((((((((((((((Reset local clos to sync with Domain))))))))))))))
+
+w32tm /resync /nowait
+
+w32TM /config /syncfromflags:manual /manualpeerlist:time-a-g.nist.gov
+
+w32TM /config /syncfromflags:manual /manualpeerlist:clock.psu.edu
+
+Force update of config
+w32tm /config /update
+
+Query config
+w32tm /query /configuration
+
+w32tm /query /status
+
+**** FOR VPN/DHS *****
+Net time 
+
+Net Time /Yes
+
+net time \\time-a-g.nist.gov /set /y
+((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))
